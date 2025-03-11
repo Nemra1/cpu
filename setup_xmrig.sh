@@ -27,7 +27,7 @@ cat <<EOF > ~/xmrig/xmrig.sh
 cd ~/xmrig
 chmod +x xmrig
 sudo sysctl -w vm.nr_hugepages=128  # Ensure Huge Pages are set before running
-
+# if you would to limit core numbers add that --threads=3 = means 3 cores and --cpu-max-threads-hint=75
 # Run XMRig with optimizations
 sudo nice -n -20 ./xmrig --donate-level=0 --no-msr --cpu-max-threads-hint=100 --huge-pages \
   -o stratum+ssl://rx.unmineable.com:443 -k \
